@@ -6,7 +6,7 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
 
-public class loginTest {
+public class comprasVueloTest {
     private WebDriver driver;
 
     //indica por medio de junit la configuracion para este test (clase loginTest)
@@ -24,14 +24,27 @@ public class loginTest {
 
     //el cuerpo de la automatizacion
     @Test
-    public void testLogin(){
-        WebElement username = driver.findElement(By.xpath("//input[@name='userName']"));
-        WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
-        WebElement botonSubmit = driver.findElement(By.xpath("//input[@name='submit']"));
+    public void comprasVueloTest(){
+        WebElement type = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement passangers = driver.findElement(By.xpath("//select[@name='passCount']"));
+        WebElement departingFrom = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement onMonth = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement onDay = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement arriving = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement returningMonth = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement returningDay = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement serviceClass = driver.findElement(By.xpath("//input[@value='oneway']"));
+        WebElement airline = driver.findElement(By.xpath("//input[@value='oneway']"));
 
-        username.sendKeys("sergioNOGURU");
-        password.sendKeys("user123");
-        botonSubmit.click();
+        type.sendKeys();
+
+
+
+
+
+
+
+        //botonSubmit.click("");
     }
 
     //indica lo que se realiza luego de terminar el test
