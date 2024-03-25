@@ -5,6 +5,7 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.support.ui.Select;
 
 public class comprasVueloTest {
     private WebDriver driver;
@@ -19,32 +20,37 @@ public class comprasVueloTest {
         //maximizar la pantalla
         driver.manage().window().maximize();
         //indicar al driver que se dirija a la pagina que vamos a testear
-        driver.get("http://demo.guru99.com/test/newtours/");
+        driver.get("https://demo.guru99.com/test/newtours/reservation.php");
     }
 
     //el cuerpo de la automatizacion
     @Test
     public void comprasVueloTest(){
         WebElement type = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement passangers = driver.findElement(By.xpath("//select[@name='passCount']"));
-        WebElement departingFrom = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement onMonth = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement onDay = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement arriving = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement returningMonth = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement returningDay = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement serviceClass = driver.findElement(By.xpath("//input[@value='oneway']"));
-        WebElement airline = driver.findElement(By.xpath("//input[@value='oneway']"));
-
-        type.sendKeys();
-
+        WebElement passangersCant = driver.findElement(By.xpath("//option[@value='4']"));
+        WebElement departingFrom = driver.findElement(By.xpath("//option[@value='Frankfurt']"));
+        WebElement onMonth = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[5]/td[2]/select[1]/option[3]"));
+        WebElement onDay = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[5]/td[2]/select[2]/option[30]"));
+        WebElement arriving = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[6]/td[2]/select/option[10]"));
+        WebElement returningMonth = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[7]/td[2]/select[1]/option[4]"));
+        WebElement returningDay = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[7]/td[2]/select[2]/option[10]"));
+        WebElement serviceClass = driver.findElement(By.xpath("//input[@value='Business']"));
+        WebElement airline = driver.findElement(By.xpath("/html/body/div[2]/table/tbody/tr/td[2]/table/tbody/tr[4]/td/table/tbody/tr/td[2]/table/tbody/tr[5]/td/form/table/tbody/tr[10]/td[2]/select/option[4]"));
+        WebElement botonContinue = driver.findElement(By.xpath("//input[@type='image']"));
 
 
 
-
-
-
-        //botonSubmit.click("");
+        type.click();
+        passangersCant.click();
+        departingFrom.click();
+        onMonth.click();
+        onDay.click();
+        arriving.click();
+        returningMonth.click();
+        returningDay.click();
+        serviceClass.click();
+        airline.click();
+        botonContinue.click();
     }
 
     //indica lo que se realiza luego de terminar el test
