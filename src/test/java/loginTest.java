@@ -29,7 +29,7 @@ public class loginTest {
         WebElement password = driver.findElement(By.xpath("//input[@name='password']"));
         WebElement botonSubmit = driver.findElement(By.xpath("//input[@name='submit']"));
 
-        username.sendKeys("sergioNOGURU");
+        username.sendKeys("sergioGURU");
         password.sendKeys("user123");
         botonSubmit.click();
     }
